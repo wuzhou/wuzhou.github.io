@@ -1,0 +1,41 @@
+---
+author: wuzhou
+comments: true
+date: 2011-12-04 13:08:45+00:00
+layout: post
+slug: common-lisp-%e4%b8%ad%e7%9a%84%e9%97%ad%e5%8c%85
+title: Common Lisp 中的闭包
+wordpress_id: 30
+categories:
+- 编程
+tags:
+- Lisp
+---
+
+**1.闭包**
+
+闭包是可以包含自由（未绑定到特定对象）变量的代码块；这些变量不是在这个代码块内或者任何全局上下文中定义的，而是在定义代码块的环境中定义。“闭包” 一词来源于以下两者的结合：要执行的代码块（由于自由变量被包含在代码块中，这些自由变量以及它们引用的对象没有被释放）和为自由变量提供绑定的计算环境（作用域）。
+
+**2.闭包的作用**
+
+闭包的价值在于可以作为函数对象 或者匿名函数，对于类型系统而言这就意味着不仅要表示数据还要表示代码。支持闭包的多数语言都将函数作为第一级对象，就是说这些函数可以存储到变量中、作为参数传递给其他函数，最重要的是能够被函数动态地创建和返回。
+
+**3.Common Lisp 中的闭包**
+
+Common Lisp 是可以把函数作为数据的，所以闭包对于Common Lisp 编程有很重要的作用。
+
+    
+    (let ((count 0)) #'(lambda () (setf count (1+ count))))
+
+
+这个匿名函数“闭包”了**LET**创建的绑定。在这个匿名行数里count这词法（lexical）是不会被释放的。
+
+**扩展阅读：**
+
+[闭包简介](http://huangz.me/closure_short_intro/)
+
+**参考：**
+
+1.百度百科，闭包：[http://baike.baidu.com/view/648413.htm](http://baike.baidu.com/view/648413.htm)
+
+2.《实用Common Lisp编程》

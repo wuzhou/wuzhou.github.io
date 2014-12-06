@@ -1,0 +1,24 @@
+---
+author: wuzhou
+comments: true
+date: 2011-10-28 07:20:05+00:00
+layout: post
+slug: '%e6%89%b9%e9%87%8f%e4%bf%ae%e6%94%b9mp3%e6%96%87%e4%bb%b6%e4%bf%a1%e6%81%af%e7%9a%84%e5%b0%8f%e5%b7%a5%e5%85%b7'
+title: 批量修改mp3文件信息的小工具
+wordpress_id: 20
+categories:
+- 编程
+tags:
+- Flex
+- 设计
+---
+
+上午遇到一批信息很奇怪的mp3文件，导入到ipod之后，之前ipod里的音乐的专辑信息全都没有了。后来，发现可能是这些mp3的信息太诡异造成的。只能在导入之前手动把这些文件的信息改的规律一些。每次修改时都要右键点击编辑信息实在是太麻烦，所以就想做一个可以批量修改mp3的工具。虽然网上好像也类似的软件，不过这个也不难，自己可以做，还可以练练手。于是，就用Flex开发了一个Air程序。代码不到200行。
+
+截图：
+
+[![](http://wuzhoublog-wordpress.stor.sinaapp.com/uploads/2011/10/20111028150534-300x144.png)](http://wuzhoublog-wordpress.stor.sinaapp.com/uploads/2011/10/20111028150534.png)
+
+使用也很简单：选择文件，在表格里修改信息，然后点击“修改”按钮就行了。
+
+程序和源码下载：[http://115.com/file/e6docpjv](http://115.com/file/e6docpjv)

@@ -1,0 +1,31 @@
+---
+author: wuzhou
+comments: true
+date: 2012-02-07 05:49:16+00:00
+layout: post
+slug: jython%e7%9a%84%e4%bd%bf%e7%94%a8
+title: Jython的使用
+wordpress_id: 52
+categories:
+- 编程
+---
+
+在Java程序中使用Jython包利用python语言的一些特性解决一些问题。
+
+**PythonInterpreter**类，这个类提供了一些方法在Java程序中嵌入Python程序。如：
+_exec _方法可以运行一段在命名空间中的Python语句。
+_get _方法可以取出一个在命名空间中的一个变量，返回值是PyOject，之后可以使用PyObject中的一些方法把返回值转换为需要的Java类型。
+
+
+
+
+
+实例参考：[http://bbs.chinaunix.net/thread-1026375-1-1.html](http://bbs.chinaunix.net/thread-1026375-1-1.html)
+
+
+
+
+语法参考：[http://www.jython.org/javadoc/org/python/util/PythonInterpreter.html](http://www.jython.org/javadoc/org/python/util/PythonInterpreter.html)
+
+
+
