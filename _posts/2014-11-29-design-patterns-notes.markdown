@@ -80,3 +80,6 @@ tags:
 
 ## 7. Memento
 这个模式又叫做 Token，其作用是在不破坏和暴露对象内部结构的情况下记录对象的内部状态，从而在需要恢复对象之前的状态时用上。这一模式在实现时一般由三部分组成：Memento、Originator、Caretaker。Memento 就是用来记录对象状态的；Originator 将通过创建 Memento 来记录自己的状态；Caretaker 则是用来保存和管理 Memento 的。
+
+## 8. State
+当一个对象的内部状态发生改变时可以同过改变其 State 对象的类型来改变其自身行为，这种模式就称为 State。该模式的组成部分有三个：Context、State 和 ConcreteState Subclasses。Context 要维护和确定其 State 对象的类，不同的 State 类型它体现出来的行为也不同。State 是一个定义了一系列行为接口的抽象类；其中需要注意的是：它一般需要一个状态转换的接口，这样做可以使状态转换的逻辑变得易于改变和维护。ConcreteState subclasses 是继承了 State 抽象类的子类，不同的子类具有不同的行为。采用这种模式的好处是：可以很轻松地添加新的 State，只要实现新的ConcreteState subclasses 即可。
