@@ -83,3 +83,6 @@ tags:
 
 ## 8. State
 当一个对象的内部状态发生改变时可以同过改变其 State 对象的类型来改变其自身行为，这种模式就称为 State。该模式的组成部分有三个：Context、State 和 ConcreteState Subclasses。Context 要维护和确定其 State 对象的类，不同的 State 类型它体现出来的行为也不同。State 是一个定义了一系列行为接口的抽象类；其中需要注意的是：它一般需要一个状态转换的接口，这样做可以使状态转换的逻辑变得易于改变和维护。ConcreteState subclasses 是继承了 State 抽象类的子类，不同的子类具有不同的行为。采用这种模式的好处是：可以很轻松地添加新的 State，只要实现新的ConcreteState subclasses 即可。
+
+## 9. Visitor
+一个对象的内部元素（Element）是各种不同类型的对象，而且这些对象有着不同的接口。当我们想要对这些对象进行相似的访问操作时，可以把这些对不同类型元素的类似操作打包到一个对象中以便维护，这便是 Visitor 模式的主要思想。实现它的关键是双向分发（Double-dispatch），简单理解就是：Element 定义类所能接受的 Visitor 类型，不同类型的 Visitor 的操作种类是不一样的；同时在一种类型的 Visitor 中实现了对不同类型的 Element 的相似操作；所以在 Visitor 模式中的一次访问操作是由 Element 和 Visitor 的类型共同决定的，这就是所谓双向分发。
