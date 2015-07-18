@@ -4,7 +4,7 @@ comments: false
 date: 2015-05-03 17:23:00+00:00
 layout: post
 slug: vertex-transformations
-title: 定点着色器中的顶点转换
+title: 顶点着色器中的顶点转换
 categories:
 - 计算机图形
 tags:
