@@ -1,0 +1,48 @@
+body {
+  padding-top: 50px;
+}
+
+ul.posts {
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+  ul.posts li {
+    line-height: 1.75em;
+  }
+
+  ul.posts span {
+    color: #aaa;
+    font-family: Monaco, "Courier New", monospace;
+    font-size: 80%;
+  }
+
+  .footer {
+    font-size: 80%;
+    color: #666;
+    border-top: 4px solid #eee;
+    margin-top: 2em;
+    overflow: hidden;
+  }
+
+    .footer .contact {
+      float: left;
+      margin-right: 3em;
+    }
+
+      .footer .contact a {
+        color: #8085C1;
+      }
+
+#related {
+  margin-top: 2em;
+}
+
+  #related h2 {
+    margin-bottom: 1em;
+  }
+
+.postTitle{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

@@ -2,14 +2,14 @@
 layout: default
 title: WuZhou's Blog
 ---
+  <h1>Archives</h1>
 
-<div id="home">
-  <h1>Blog Posts</h1>
   <ul class="posts">
     {% for post in site.posts %}
       <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
+
 
   <h1>Prominent Open Source Projects</h1>
   <ul class="posts">
@@ -21,5 +21,6 @@ title: WuZhou's Blog
     <li><a href="http://github.com/mojombo/proxymachine/">ProxyMachine:</a> Layer 7 routing proxy in Ruby with Event Machine.</li>
     <li><a href="http://github.com/mojombo/primer/">Primer:</a> JavaScript based Flash-like API layered on top of Canvas.</li>
     <li><a href="http://github.com/mojombo/chronic/">Chronic:</a> Ruby natural language date/time parser.</li>
+    <li><a href="http://github.com/twbs/bootstrap/">Bootstrap:</a> The most popular framework for developing responsive projects on the web.</li>
   </ul>
-</div>
+
