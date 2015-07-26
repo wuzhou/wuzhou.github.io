@@ -44,5 +44,11 @@ ul.posts {
 
 .postTitle{
   margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+p.postInfo{
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
   margin-bottom: 50px;
 }

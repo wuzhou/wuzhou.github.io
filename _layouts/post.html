@@ -5,6 +5,9 @@ layout: default
 	<div class="postTitle">
 	<h1>{{ page.title }}</h1>
 	</div>
+
+    <p class="postInfo">Date: {{ page.date | date_to_string }}</p>
+
 	
 {{ content }}
 </div>
