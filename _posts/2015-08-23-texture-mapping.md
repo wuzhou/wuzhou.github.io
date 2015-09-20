@@ -4,7 +4,7 @@ comments: false
 date: 2015-08-23 17:07:00+00:00
 layout: post
 slug: texture-mapping-and-graphics-pipeline
-title: 从 Texture Maping 理解可编程的图形管线
+title: 从 Texture Mapping 理解可编程的图形管线
 categories:
 - 计算机图形
 tags:
