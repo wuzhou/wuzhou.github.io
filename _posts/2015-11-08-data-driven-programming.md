@@ -6,9 +6,9 @@ layout: post
 slug: data-driven-programming
 title: 理解数据驱动编程
 categories:
-- 编程
+- programming
 tags:
-- 编程
+- programming
 ---
 
 以前在学校的时候就听同学说过数据驱动编程。最近在看《UNIX编程艺术》时读到了关于这个概念的详细描述，发现当时我把数据驱动编程地把数据驱动编程和面向对象（OO）搞混淆了。 首先就来说说它们两者之间的区别。
