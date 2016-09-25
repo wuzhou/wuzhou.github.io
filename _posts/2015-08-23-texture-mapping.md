@@ -13,7 +13,7 @@ tags:
 
 [原文之前发布在公司的 Blog 上](http://blog.jidanke.com/2015/08/19/texture-mapping-and-render-pipeline/)
 
-#Texture Mapping
+# Texture Mapping
 
 在 Unity 3D 引擎中要渲染一个3D模型需要这样一些基本组件：`Mesh`、`Material`和`Shader`。其中`Mesh`能够表示模型的几何形状，在有了模型的几何形状之后游戏引擎就可以把`Material`渲染到模型表面。`Material`的表现效果则可以由着色器也就是`Shader`来控制。
 
@@ -24,18 +24,18 @@ tags:
 ```
 Shader "Cg shader with single texture" {
    Properties {
-      _MainTex ("Texture Image", 2D) = "white" {} 
+      _MainTex ("Texture Image", 2D) = "white" {}
          // 要用来渲染模型的贴图
    }
    SubShader {
       Pass {    
          CGPROGRAM
- 
+
          #pragma vertex vert  
-         #pragma fragment frag 
- 
+         #pragma fragment frag
+
          uniform sampler2D _MainTex;    
- 
+
          struct vertexInput {
             float4 vertex : POSITION;
             float4 texcoord : TEXCOORD0;
@@ -44,24 +44,24 @@ Shader "Cg shader with single texture" {
             float4 pos : SV_POSITION;
             float4 tex : TEXCOORD0;
          };
- 
-         vertexOutput vert(vertexInput input) 
+
+         vertexOutput vert(vertexInput input)
          {
             vertexOutput output;
- 
+
             output.tex = input.texcoord;
-               // 顶点在贴图坐标的坐标，也就是 UV 坐标 
-			   
+               // 顶点在贴图坐标的坐标，也就是 UV 坐标
+
             output.pos = mul(UNITY_MATRIX_MVP, input.vertex);
             return output;
          }
-		 
+
          float4 frag(vertexOutput input) : COLOR
          {
             return tex2D(_MainTex, input.tex.xy);   
                // 根据模型表面像素点的 UV 坐标获取贴图上的颜色进行渲染
          }
- 
+
          ENDCG
       }
    }
@@ -71,9 +71,9 @@ Shader "Cg shader with single texture" {
 
 从上面的代码中我们可以看出，在顶点着色器中我们只是输入了顶点的 UV 坐标，但是在块着色器中却可以通过模型表面像素点的 UV 坐标来获取了贴图上颜色，至于这些像素点的 UV 坐标从何而来我们从代码上是看不出来的。原因是模型表面像素点的 UV  坐标的确定并不是通过在着色器中编程实现的，这个过程是由图形管线自动的完成的。那么这个过程是在什么时候完成的呢？这就需要去了解一下关于图形管线（Graphics Pipeline）的相关知识了。
 
-#可编程的图形管线
+# 可编程的图形管线
 
-##图形管线的工作流程
+## 图形管线的工作流程
 
 图形管线的工作流程可以表示为如下步骤：
 
@@ -91,7 +91,7 @@ Vertex Data -> Vertex Shader -> Primitive -> Rasterization -> Fragment Shader ->
 
 在这些工作完成之后，通过光栅化得到的信息都会作为输入供块着色器使用。对应到上面的着色器代码，`input.tex.xy` 这个数据就是经过了光栅化处理了的数据，这样模型上的像素点就可以很好地和贴图上的像素点对应起来了。也就完成了 Texture Mapping。
 
-#参考资料
+# 参考资料
 * [Textured Spheres](https://en.wikibooks.org/wiki/Cg_Programming/Unity/Textured_Spheres)
 * [Rasterization](https://en.wikibooks.org/wiki/Cg_Programming/Rasterization)
 * [Programmable Graphics Pipeline](https://en.wikibooks.org/wiki/Cg_Programming/Programmable_Graphics_Pipeline)
