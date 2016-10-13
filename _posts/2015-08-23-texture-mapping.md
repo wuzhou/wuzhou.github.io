@@ -81,7 +81,7 @@ Vertex Data -> Vertex Shader -> Primitive -> Rasterization -> Fragment Shader ->
 
 在这些过程中我们可以编程的地方只有 Vertex Shader 和 Fragment Shader。在 Vertex Shader 中我们可以对由3D模型提供的 Vertex（顶点）Data 进行一些简单的处理和变化；在 Fragment Shader 中可以对模型上每一个像素点进行处理。而模型上像素点的 UV 坐标的确定则是由 Rasterization（光栅化） 来完成。
 
-###光栅化
+### 光栅化
 
 3D模型的表面是由一系列的几何图形组合而成的，这些图形的顶点就是由模型提供的顶点数据。光栅化会完成以下两部分工作：
 
