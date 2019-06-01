@@ -34,8 +34,10 @@ SwSS 的全称为："Swap" Set Size，指交换内存的大小，与 MacOS 不�
 
 ## Memory Pressure（内存压力）分析
 分析内存的压力首先要知道两个概念：
+
 1. vm_page_free_count，当前系统空闲的内存页个数。
 2. vm_page_free_target，系统至少需要的空闲内存页个数。
+
 当 vm_page_free_count < vm_page_free_target 时，则表示当前系统的内存处于有压力的状态。
 可以使用命令 `sysctl -a vm | grep page_free`，来查看值两个数值，从而来判断系统的内存压力的情况。
 
