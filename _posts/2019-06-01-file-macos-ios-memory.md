@@ -47,7 +47,7 @@ Jetsam 是 MacOS 和 iOS 共有的一套内存管理机制，但是由于 iOS �
 
 # 常见内存错误
 
-## EXC_BAD_ACCESS exception, and the process receives a segmentation fault (SIGSEGV, Signal #11).
+### EXC_BAD_ACCESS exception, and the process receives a segmentation fault (SIGSEGV, Signal #11).
 访问了还未被系统分配的内存，这也是在 iOS 应用崩溃中经常看到的错误类型。
 
 # 参考文献
